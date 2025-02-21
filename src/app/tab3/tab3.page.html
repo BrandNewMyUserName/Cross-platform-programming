@@ -1,17 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header name="Лабораторна робота 1"></app-header>
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card color="light">
+    <ion-card-title>Завдання 3</ion-card-title>
+    <ion-card-content>
+      <p>
+        Згенерувати матрицю розміром NxN. Виокреміть всі елементи,
+        що належать непарним рядкам і менші за 50.
+      </p>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+      <ion-item>
+        <ion-label position="floating">Розмір N</ion-label>
+        <ion-input type="number" [(ngModel)]="n"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="generateMatrix()">Згенерувати</ion-button>
+      
+      <div *ngIf="matrix.length">
+        <h3>Матриця:</h3>
+        <div *ngFor="let row of matrix">{{ row.join(', ') }}</div>
+        <h3>Числа з непарних рядків &lt; 50:</h3>
+        <p>{{ filteredNumbers.join(', ') }}</p>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
