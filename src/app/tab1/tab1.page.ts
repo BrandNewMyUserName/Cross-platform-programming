@@ -14,9 +14,6 @@ import { CommonModule} from '@angular/common';
 })
 
 export class Tab1Page {
-  number1: number = 0;
-  number2: number = 0;
-  number3: number = 0;
   result: number | string = '';
 
   calculateSum(input1: any, input2: any, input3: any): void {

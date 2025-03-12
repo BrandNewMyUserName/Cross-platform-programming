@@ -26,7 +26,7 @@ export class Tab3Page {
       for (let j = 0; j < this.n; j++) {
         let num = Math.floor(Math.random() * 100);
         row.push(num);
-        if (i % 2 === 0 && num < 50) {
+        if (i % 2 === 1 && num < 50) {
           this.filteredNumbers.push(num);
         }
       }
