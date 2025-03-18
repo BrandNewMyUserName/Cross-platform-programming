@@ -1,15 +1,5 @@
 import { scheduleRec } from "./scheduleRec"
-// export class schedule {
-//     records: scheduleRec[] = [];
 
-//     addscheduleRec(record: scheduleRec){
-//         this.records.push(record)
-//     }
-
-//     groupByDifficulty() {
-//         this.records.sort((a, b) => a.difficulty - b.difficulty);
-//     }
-// }
 export class schedule {
     records: scheduleRec[] = [];
     difficultyGroups: { difficulty: number; count: number; titles: string[] }[] = []; // Add titles array
@@ -30,7 +20,7 @@ export class schedule {
         this.difficultyGroups = Array.from(difficultyMap.entries()).map(([difficulty, group]) => ({
             difficulty,
             count: group.count,
-            titles: group.titles
+            titles: group.titles 
         }));
 
         this.difficultyGroups.sort((a, b) => a.difficulty - b.difficulty);

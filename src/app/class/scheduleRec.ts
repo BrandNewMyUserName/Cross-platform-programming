@@ -1,8 +1,4 @@
 export class scheduleRec {
-    // title!: string;
-    // timeDate!: string;
-    // difficulty!: number;
-    // isCompleted!: boolean;
 
     title: string = '';
     timeDate: string = '';
