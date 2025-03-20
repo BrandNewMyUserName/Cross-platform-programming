@@ -24,7 +24,7 @@
       <ion-item 
       *ngFor="let currAppliance of appliances" class="box"
       [ngStyle]="{
-        'color': currAppliance.name == this.maxPowerName ? 'red' : 'white'
+        'color': isMaxPower(currAppliance) ? 'red' : 'white'
       }">
         <pre>{{currAppliance.displayInfo()}}</pre>
       </ion-item>

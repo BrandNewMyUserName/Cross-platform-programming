@@ -23,6 +23,7 @@ export class AbstractClassPage implements OnInit {
   data: any = [];
   appliances: KitchenAppliance[] = [];
   url = 'https://api.jsonbin.io/v3/b/67d9b7a68561e97a50eebeaf';
+  
   async load() {
     this.data = [];
     this.appliances = [];
@@ -32,12 +33,13 @@ export class AbstractClassPage implements OnInit {
       this.data = json;
       this.data = this.data.record;
       let i = 0;
+      
       while(this.data[i]!=undefined){
         let currentAppliance = Factory.developKitchenAppliance(
           this.data[i]['name'],
           this.data[i]['power'],
           this.data[i]['weight'],
-          this.data[i]['slotCount'] | this.data[i]['bladeCount'] 
+          this.data[i]['slotCount'] ?? this.data[i]['bladeCount']
         );
         this.getMaxPower(currentAppliance.power, currentAppliance.name)
         this.appliances.push(currentAppliance);
@@ -51,6 +53,10 @@ export class AbstractClassPage implements OnInit {
       this.maxPower = currentPower;
       this.maxPowerName = name;
     }
+  }
+
+  isMaxPower(appliance: KitchenAppliance): boolean {
+    return appliance.name === this.maxPowerName;
   }
 
   
