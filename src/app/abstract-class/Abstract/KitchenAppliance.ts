@@ -5,6 +5,9 @@ export abstract class KitchenAppliance {
     weight: number;
 
     constructor(name: string, power: number, weight: number) {
+        if (name == '') throw new Error('Error! Unacceptable name')
+        if (power <= 0) throw new Error('Error! Unacceptable power value')
+        if (weight <= 0) throw new Error('Error! Unacceptable weight')
         this.name = name;
         this.power = power;
         this.weight = weight;

@@ -3,8 +3,8 @@ import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonCardTitle, IonItem, IonCardHeader, IonCard, IonCardContent } from '@ionic/angular/standalone';
-import { KitchenAppliance } from '../Abstract/KitchenAppliance';
-import { Factory } from '../Abstract/Factory';
+import { KitchenAppliance } from './Abstract/KitchenAppliance';
+import { Factory } from './Abstract/Factory';
 
 @Component({
   selector: 'app-abstract-class',
@@ -33,7 +33,6 @@ export class AbstractClassPage implements OnInit {
       this.data = json;
       this.data = this.data.record;
       let i = 0;
-      
       while(this.data[i]!=undefined){
         let currentAppliance = Factory.developKitchenAppliance(
           this.data[i]['name'],

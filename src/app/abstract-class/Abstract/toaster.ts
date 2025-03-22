@@ -5,6 +5,7 @@ export class Toaster extends KitchenAppliance {
 
     constructor(name: string, power: number, weight: number, slotCount: number) {
         super(name, power, weight);
+        if (slotCount <= 0) throw new Error('Error! Unacceptable number of slots')
         this.slotCount = slotCount;
     }
 
