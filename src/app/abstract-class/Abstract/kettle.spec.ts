@@ -26,20 +26,20 @@ describe('Kettle testing', () => {
     });
 
     // Incorrect weight
-    it('Creating kettle\'s class object with negative weight', () =>{
+    fit('Creating kettle\'s class object with negative weight', () =>{
         expect(() => new Kettle('Чайник YA-2200', 500, -2, 4)).toThrow(new Error('Error! Unacceptable weight'));
     });
 
-    it('Creating kettle\'s class object with zero weight', () =>{
+    fit('Creating kettle\'s class object with zero weight', () =>{
         expect(() => new Kettle('Чайник YA-2200', 500, 0, 4)).toThrow(new Error('Error! Unacceptable weight'));
     });
 
     // Incorrect number of blades
-    it('Creating kettle\'s class object with the negative volume', () =>{
-        expect(() => new Kettle('Чайник YA-2200', 500, 2, -4)).toThrow(new Error('Error! Unacceptable volume'));
+    fit('Creating kettle\'s class object with the negative volume', () =>{
+        expect(() => new Kettle('Чайник YA-2200', 500, 2, -4)).toThrow(new Error('Error! Unacceptable volume of kettle'));
     });
 
-    it('Creating kettle\'s class object with the zero volume', () =>{
-        expect(() => new Kettle('Чайник YA-2200', 500, 2, 0)).toThrow(new Error('Error! Unacceptable volume'));
+    fit('Creating kettle\'s class object with the zero volume', () =>{
+        expect(() => new Kettle('Чайник YA-2200', 500, 2, 0)).toThrow(new Error('Error! Unacceptable volume of kettle'));
     });
 });

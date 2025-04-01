@@ -38,7 +38,7 @@ export class AbstractClassPage implements OnInit {
           this.data[i]['name'],
           this.data[i]['power'],
           this.data[i]['weight'],
-          this.data[i]['slotCount'] ?? this.data[i]['bladeCount']
+          this.data[i]['slotCount'] ?? this.data[i]['bladeCount'] ?? this.data[i]['volume']
         );
         this.getMaxPower(currentAppliance.power, currentAppliance.name)
         this.appliances.push(currentAppliance);

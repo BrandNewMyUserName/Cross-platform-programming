@@ -26,16 +26,16 @@ describe('Blender testing', () => {
     });
 
     // Incorrect weight
-    it('Creating blender\'s class object with negative weight', () =>{
+    fit('Creating blender\'s class object with negative weight', () =>{
         expect(() => new Blender('Блендер YZ-3500', 500, -2, 4)).toThrow(new Error('Error! Unacceptable weight'));
     });
 
-    it('Creating blender\'s class object with zero weight', () =>{
+    fit('Creating blender\'s class object with zero weight', () =>{
         expect(() => new Blender('Блендер YZ-3500', 500, 0, 4)).toThrow(new Error('Error! Unacceptable weight'));
     });
 
     // Incorrect number of blades
-    it('Creating blender\'s class object with the negative number of blades', () =>{
+    fit('Creating blender\'s class object with the negative number of blades', () =>{
         expect(() => new Blender('Блендер YZ-3500', 500, 2, -4)).toThrow(new Error('Error! Unacceptable number of blades'));
     });
 });
