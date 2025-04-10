@@ -14,17 +14,14 @@ describe('SeriesService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('Обчислення за допомогою рекурсії значень x=0.1 y≈0.0953', () => {
+  it('Обчислення за допомогою ряду значень x=0.1 y≈0.0953', () => {
     const x = 0.1;
     const expectedY = 0.0953;
   
-    const xy = service.getTab(); // Повертає Map<string, number>
+    const xy = service.getTab(0.1, 0.1, 0.1); 
     const y1 = xy.get(x.toFixed(2));
-  
-    expect(y1).toBeDefined();
-    if (y1 !== undefined) {
-      expect(y1.toFixed(4)).toBe(expectedY.toFixed(4));
-    }
+
+    expect(y1.toFixed(4)).toBe(expectedY.toFixed(4));
   });
   
 });

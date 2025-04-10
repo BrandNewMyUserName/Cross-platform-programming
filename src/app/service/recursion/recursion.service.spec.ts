@@ -17,12 +17,12 @@ describe('RecursionService', () => {
     const x = 0.1;
     const expectedY = 0.0953;
 
-    const result = service.getTab(0.1, 0.1, 0.1); // одна точка: x = 0.1
+    const result = service.getTab(0.1, 0.1, 0.1); 
     const y = result.get(x.toFixed(2));
 
     expect(y).toBeDefined();
     if (y !== undefined) {
-      expect(y).toBeCloseTo(expectedY, 2); // Точність до 2 знаків після коми
+      expect(y).toBeCloseTo(expectedY, 2);
     }
   });
 
